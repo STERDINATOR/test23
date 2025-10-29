@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order - The Ice Cream World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff6f0, #ffe4ec, #fdf6f9);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header img {
+      width: 180px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    nav {
+      text-align: center;
+      background-color: rgba(255, 182, 193, 0.7);
+      padding: 15px 0;
+      border-radius: 40px;
+      margin: 0 100px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b2e05;
+      font-weight: bold;
+      padding: 12px 25px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f9b4c2;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .order-section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .order-form {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      padding: 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-form h1 {
+      font-size: 45px;
+      color: #4b2e05;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #f8c8d8;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 16px;
+      color: #ff7b9c;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ffd1dc;
+      border-radius: 15px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #ff7b9c;
+      box-shadow: 0 0 10px rgba(255, 123, 156, 0.2);
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .flavors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .flavor-option {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid #ffd1dc;
+    }
+
+    .flavor-option:hover {
+      background-color: #ffd1dc;
+      transform: translateY(-2px);
+    }
+
+    .flavor-option.selected {
+      background-color: #ff7b9c;
+      color: white;
+      border-color: #ff7b9c;
+    }
+
+    button[type="submit"] {
+      background-color: #ff7b9c;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 120, 160, 0.4);
+      display: block;
+      margin: 40px auto 0;
+      font-weight: bold;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #ff5c85;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9b4c2;
+      color: #4b2e05;
+      font-weight: bold;
+      border-radius: 0 0 30px 30px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://img.freepik.com/free-vector/sweet-ice-cream-shop-logo-design_742173-32166.jpg?semt=ais_hybrid&w=740&q=80" alt="The Ice Cream World logo">
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="order.html">Order</a>
+  </nav>
+
+  <section class="order-section">
+    <div class="order-form">
+      <h1>Place Your Order</h1>
+      <form>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="delivery">Delivery Option</label>
+            <select id="delivery" name="delivery" required>
+              <option value="">Select delivery option</option>
+              <option value="pickup">Store Pickup</option>
+              <option value="delivery">Home Delivery</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label>Select Your Flavors</label>
+          <div class="flavors-grid">
+            <div class="flavor-option">Vanilla</div>
+            <div class="flavor-option">Chocolate</div>
+            <div class="flavor-option">Strawberry</div>
+            <div class="flavor-option">Mint Chocolate</div>
+            <div class="flavor-option">Coffee</div>
+            <div class="flavor-option">Butterscotch</div>
+            <div class="flavor-option">Mango</div>
+            <div class="flavor-option">Blueberry</div>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="quantity">Quantity (Scoops)</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="20" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="notes">Special Instructions</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The Ice Cream World. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Add interactivity to flavor selection
+    document.querySelectorAll('.flavor-option').forEach(option => {
+      option.addEventListener('click', () => {
+        option.classList.toggle('selected');
+      });
+    });
+  </script>
+</body>
+</html>

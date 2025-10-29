@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - The Ice Cream World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff6f0, #ffe4ec, #fdf6f9);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header img {
+      width: 180px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    nav {
+      text-align: center;
+      background-color: rgba(255, 182, 193, 0.7);
+      padding: 15px 0;
+      border-radius: 40px;
+      margin: 0 100px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b2e05;
+      font-weight: bold;
+      padding: 12px 25px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f9b4c2;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .services {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .services h1 {
+      font-size: 45px;
+      color: #4b2e05;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px #f8c8d8;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .service-item {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-item img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+    }
+
+    .service-item h3 {
+      color: #ff7b9c;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .service-item p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .cta-section {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #ff7b9c;
+      color: white;
+      padding: 15px 40px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(255, 120, 160, 0.4);
+    }
+
+    .cta-button:hover {
+      background-color: #ff5c85;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9b4c2;
+      color: #4b2e05;
+      font-weight: bold;
+      border-radius: 0 0 30px 30px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://img.freepik.com/free-vector/sweet-ice-cream-shop-logo-design_742173-32166.jpg?semt=ais_hybrid&w=740&q=80" alt="The Ice Cream World logo">
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="order.html">Order</a>
+  </nav>
+
+  <section class="services">
+    <h1>Our Services</h1>
+    <div class="service-grid">
+      <div class="service-item">
+        <img src="https://img.icons8.com/color/96/ice-cream-cone.png" alt="Ice Cream Scoops">
+        <h3>Classic Ice Cream Service</h3>
+        <p>Choose from our wide selection of handcrafted ice cream flavors, served in cups, cones, or take-home containers.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/color/96/birthday-cake.png" alt="Ice Cream Cakes">
+        <h3>Custom Ice Cream Cakes</h3>
+        <p>Celebrate special occasions with our beautifully designed ice cream cakes, customized to your preferences.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/color/96/food-truck.png" alt="Catering">
+        <h3>Catering Services</h3>
+        <p>Make your events sweeter with our mobile ice cream service. Perfect for weddings, parties, and corporate events.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/color/96/workshop.png" alt="Workshop">
+        <h3>Ice Cream Making Workshops</h3>
+        <p>Learn the art of ice cream making in our interactive workshops. Great for team building and special occasions.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/color/96/gift.png" alt="Gift Cards">
+        <h3>Gift Cards</h3>
+        <p>Share the joy of ice cream with our beautifully packaged gift cards, perfect for any occasion.</p>
+      </div>
+      <div class="service-item">
+        <img src="https://img.icons8.com/color/96/delivery.png" alt="Delivery">
+        <h3>Home Delivery</h3>
+        <p>Enjoy our delicious ice cream from the comfort of your home with our convenient delivery service.</p>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <a href="order.html" class="cta-button">Order Now</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 The Ice Cream World. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - The Ice Cream World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff6f0, #ffe4ec, #fdf6f9);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+      text-align: center;
+    }
+
+    .logo-container img {
+      width: 120px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Navigation Styles */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 15px;
+      background-color: rgba(255, 182, 193, 0.7);
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b2e05;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #f9b4c2;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .order-btn {
+      background-color: #ff758c;
+      color: white !important;
+      font-weight: 600;
+    }
+
+    .order-btn:hover {
+      background-color: #ff4d6d;
+      box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    }
+
+    /* About Content Styles */
+    .about-content {
+      margin-top: 180px;
+      padding: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-hero {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3.5em;
+      color: #4b2e05;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #f8c8d8;
+    }
+
+    .about-hero p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    /* Values Grid Styles */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .value-card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .value-card .icon {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .value-card h3 {
+      color: #4b2e05;
+      margin-bottom: 15px;
+      font-family: 'Fredoka One', cursive;
+    }
+
+    /* Team Section Styles */
+    .team-section {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .team-section h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.5em;
+      color: #4b2e05;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px #f8c8d8;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .team-member {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 5px solid #ffe4ec;
+    }
+
+    .team-member h3 {
+      color: #4b2e05;
+      margin: 10px 0 5px;
+      font-family: 'Fredoka One', cursive;
+    }
+
+    .team-member p {
+      color: #666;
+      font-style: italic;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: linear-gradient(rgba(255, 182, 193, 0.7), rgba(255, 182, 193, 0.9));
+      padding: 60px 20px 20px;
+      margin-top: 80px;
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-section h3 {
+      color: #4b2e05;
+      font-family: 'Fredoka One', cursive;
+      margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: #4b2e05;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #ff4d6d;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        margin: 20px;
+        padding: 10px;
+      }
+
+      .about-hero h1 {
+        font-size: 2.5em;
+      }
+
+      .values-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://img.freepik.com/free-vector/sweet-ice-cream-shop-logo-design_742173-32166.jpg?semt=ais_hybrid&w=740&q=80" alt="The Ice Cream World logo">
+    </div>
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="#flavours">Flavours</a>
+    <a href="#contact">Contact</a>
+    <a href="order.html" class="order-btn">Order Now</a>
+  </nav>
+
+  <div class="about-content">
+    <section class="about-hero">
+      <h1>Our Sweet Story 🍦</h1>
+      <p>Welcome to The Ice Cream World, where passion meets artisanal ice cream making! Our journey began with a simple love for creating the perfect scoop and has blossomed into a destination for ice cream lovers everywhere.</p>
+      <p>Since our founding, we've been dedicated to crafting exceptional ice cream experiences using only the finest ingredients and time-honored techniques, while adding our own creative twist to classic favorites.</p>
+    </section>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="icon">🎨</div>
+        <h3>Artisanal Craftsmanship</h3>
+        <p>Each flavor is carefully crafted by our expert ice cream artisans using traditional methods and premium ingredients.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🌟</div>
+        <h3>Quality First</h3>
+        <p>We source the finest ingredients from trusted suppliers to ensure every scoop meets our high standards.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">🌱</div>
+        <h3>Sustainable Practice</h3>
+        <p>Committed to eco-friendly packaging and supporting local farmers for a better tomorrow.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">💝</div>
+        <h3>Community Love</h3>
+        <p>Creating sweet moments and memories for our community is at the heart of everything we do.</p>
+      </div>
+    </div>
+
+    <section class="team-section">
+      <h2>Meet Our Ice Cream Artists</h2>
+      <p>Our passionate team brings together years of experience and a shared love for creating the perfect scoop.</p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sarah Johnson">
+          <h3>Sarah Johnson</h3>
+          <p>Head Chef & Founder</p>
+        </div>
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Michael Chen">
+          <h3>Michael Chen</h3>
+          <p>Flavor Innovation Expert</p>
+        </div>
+        <div class="team-member">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Emma Watson">
+          <h3>Emma Watson</h3>
+          <p>Customer Experience Manager</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#flavours">Flavors</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="services.html#catering">Catering</a></li>
+          <li><a href="services.html#events">Events</a></li>
+          <li><a href="services.html#wholesale">Wholesale</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Hours</h3>
+        <ul>
+          <li>Mon-Fri: 11AM - 10PM</li>
+          <li>Sat-Sun: 10AM - 11PM</li>
+          <li>Holidays: 10AM - 10PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 The Ice Cream World. All rights reserved. 🍦</p>
+    </div>
+  </footer>
+
+  <script>
+    // Add smooth scrolling to anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add active class to current navigation item
+    const navLinks = document.querySelectorAll('nav a');
+    const currentLocation = window.location.href;
+
+    navLinks.forEach(link => {
+      if (link.href === currentLocation) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

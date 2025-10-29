@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - The Ice Cream World</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff6f0, #ffe4ec, #fdf6f9);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header img {
+      width: 180px;
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1);
+    }
+
+    nav {
+      text-align: center;
+      background-color: rgba(255, 182, 193, 0.7);
+      padding: 15px 0;
+      border-radius: 40px;
+      margin: 0 100px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b2e05;
+      font-weight: bold;
+      padding: 12px 25px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #f9b4c2;
+      border-radius: 20px;
+      color: white;
+    }
+
+    .about-content {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .about-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      padding: 40px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-section h1 {
+      font-size: 45px;
+      color: #4b2e05;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #f8c8d8;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .value-item {
+      background-color: rgba(255, 223, 230, 0.8);
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .value-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .value-item h3 {
+      color: #ff7b9c;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .value-item p {
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .team-section {
+      text-align: center;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      margin-top: 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-section h2 {
+      font-size: 35px;
+      color: #4b2e05;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #f8c8d8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f9b4c2;
+      color: #4b2e05;
+      font-weight: bold;
+      border-radius: 0 0 30px 30px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://img.freepik.com/free-vector/sweet-ice-cream-shop-logo-design_742173-32166.jpg?semt=ais_hybrid&w=740&q=80" alt="The Ice Cream World logo">
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="order.html">Order</a>
+  </nav>
+
+  <div class="about-content">
+    <section class="about-section">
+      <h1>About The Ice Cream World</h1>
+      <p>Welcome to The Ice Cream World, where passion meets premium ice cream! Our journey began with a simple love for creating the perfect scoop and has blossomed into a destination for ice cream lovers everywhere.</p>
+      <p>Since our founding, we've been dedicated to crafting exceptional ice cream experiences using only the finest ingredients and time-honored techniques, all while adding our own creative twist to classic favorites.</p>
+    </section>
+
+    <div class="values-grid">
+      <div class="value-item">
+        <h3>Our Mission</h3>
+        <p>To create moments of pure joy through exceptional ice cream, served with love and creativity.</p>
+      </div>
+      <div class="value-item">
+        <h3>Quality First</h3>
+        <p>We use only premium ingredients and maintain the highest standards in our ice cream making process.</p>
+      </div>
+      <div class="value-item">
+        <h3>Innovation</h3>
+        <p>Constantly exploring new flavors and combinations while respecting traditional techniques.</p>
+      </div>
+      <div class="value-item">
+        <h3>Community</h3>
+        <p>Creating a welcoming space where memories are made and shared over delicious treats.</p>
+      </div>
+    </div>
+
+    <section class="team-section">
+      <h2>Meet Our Team</h2>
+      <p>Our passionate team of ice cream artisans brings together years of experience and a shared love for creating the perfect scoop. Each member contributes their unique expertise to make The Ice Cream World a special place.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 The Ice Cream World. All rights reserved.</p>
+  </footer>
+</body>
+</html>

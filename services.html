@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - The Ice Cream World</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff6f0, #ffe4ec, #fdf6f9);
+      color: #333;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+      text-align: center;
+    }
+
+    .logo-container img {
+      width: 120px;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Navigation Styles */
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding: 15px;
+      background-color: rgba(255, 182, 193, 0.7);
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #4b2e05;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #f9b4c2;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .order-btn {
+      background-color: #ff758c;
+      color: white !important;
+      font-weight: 600;
+    }
+
+    .order-btn:hover {
+      background-color: #ff4d6d;
+      box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    }
+
+    /* Services Content Styles */
+    .services-content {
+      margin-top: 180px;
+      padding: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .services-hero {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .services-hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3.5em;
+      color: #4b2e05;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px #f8c8d8;
+    }
+
+    .services-hero p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .service-card .icon {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: #4b2e05;
+      margin-bottom: 15px;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8em;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-card .features {
+      text-align: left;
+      margin-top: 20px;
+    }
+
+    .service-card .features li {
+      margin-bottom: 10px;
+      color: #555;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .service-card .features li::before {
+      content: "✓";
+      color: #ff758c;
+      font-weight: bold;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(45deg, #ff758c, #ff7eb3);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 30px;
+      padding: 60px 40px;
+      text-align: center;
+      margin-top: 80px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-section h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.5em;
+      color: #4b2e05;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px #f8c8d8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .contact-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      transition: transform 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-card .icon {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #ff758c;
+    }
+
+    .contact-card h3 {
+      color: #4b2e05;
+      margin-bottom: 15px;
+      font-family: 'Fredoka One', cursive;
+    }
+
+    /* Footer Styles */
+    footer {
+      background: linear-gradient(rgba(255, 182, 193, 0.7), rgba(255, 182, 193, 0.9));
+      padding: 60px 20px 20px;
+      margin-top: 80px;
+      backdrop-filter: blur(10px);
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-section h3 {
+      color: #4b2e05;
+      font-family: 'Fredoka One', cursive;
+      margin-bottom: 20px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-section a {
+      color: #4b2e05;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: #ff4d6d;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        margin: 20px;
+        padding: 10px;
+      }
+
+      .services-hero h1 {
+        font-size: 2.5em;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://img.freepik.com/free-vector/sweet-ice-cream-shop-logo-design_742173-32166.jpg?semt=ais_hybrid&w=740&q=80" alt="The Ice Cream World logo">
+    </div>
+  </header>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="#flavours">Flavours</a>
+    <a href="#contact">Contact</a>
+    <a href="order.html" class="order-btn">Order Now</a>
+  </nav>
+
+  <div class="services-content">
+    <section class="services-hero">
+      <h1>Sweet Services & Solutions 🍨</h1>
+      <p>Discover our range of delightful ice cream services designed to make every moment special. From catering to custom creations, we're here to serve up happiness!</p>
+    </section>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">🎉</div>
+        <h3>Event Catering</h3>
+        <p>Make your event unforgettable with our premium ice cream catering services.</p>
+        <ul class="features">
+          <li>Professional ice cream station setup</li>
+          <li>Wide variety of flavors and toppings</li>
+          <li>Custom branding options available</li>
+          <li>Experienced staff service</li>
+        </ul>
+        <a href="#contact" class="cta-button">Get Quote</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🎨</div>
+        <h3>Custom Creations</h3>
+        <p>Create your own unique ice cream flavors for special occasions.</p>
+        <ul class="features">
+          <li>Personalized flavor development</li>
+          <li>Custom packaging options</li>
+          <li>Special dietary requirements</li>
+          <li>Bulk order available</li>
+        </ul>
+        <a href="order.html" class="cta-button">Create Now</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🏢</div>
+        <h3>Corporate Services</h3>
+        <p>Bring joy to your workplace with our corporate ice cream solutions.</p>
+        <ul class="features">
+          <li>Office party catering</li>
+          <li>Employee appreciation events</li>
+          <li>Corporate gift packages</li>
+          <li>Regular delivery service</li>
+        </ul>
+        <a href="#contact" class="cta-button">Learn More</a>
+      </div>
+    </div>
+
+    <section class="contact-section" id="contact">
+      <h2>Get in Touch</h2>
+      <p>Ready to sweeten your day? Contact us to discuss how we can help make your event or occasion special!</p>
+      
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">📧</div>
+          <h3>Email Us</h3>
+          <p>icecreamworld@gmail.com</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <h3>Call Us</h3>
+          <p>+91 9561247570</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">🕒</div>
+          <h3>Business Hours</h3>
+          <p>Mon-Sun: 10AM - 10PM</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="#flavours">Flavors</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="#catering">Catering</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#corporate">Corporate</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Hours</h3>
+        <ul>
+          <li>Mon-Fri: 11AM - 10PM</li>
+          <li>Sat-Sun: 10AM - 11PM</li>
+          <li>Holidays: 10AM - 10PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 The Ice Cream World. All rights reserved. 🍦</p>
+    </div>
+  </footer>
+
+  <script>
+    // Add smooth scrolling to anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add active class to current navigation item
+    const navLinks = document.querySelectorAll('nav a');
+    const currentLocation = window.location.href;
+
+    navLinks.forEach(link => {
+      if (link.href === currentLocation) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
